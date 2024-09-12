@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Navbar from './Task4/Navbar';
 
 const users = [
     { id: 1, name: "Aakash Kandel", address: "Gaindakot" },
@@ -40,6 +41,7 @@ export default function Search() {
 
     return (
         <>
+        <Navbar/>
             <div>
                 <div class="text-center font-semibold text-gray-200 text-xl bg-green-600 p-2">Vrit Technologies First Round
                 </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Navbar from './Task4/Navbar';
 
 export default function ApiFetch() {
     const [users, setUsers] = useState([]);
@@ -14,6 +15,7 @@ export default function ApiFetch() {
                 return response.json();
             })
             .then((data) => {
+                console.log(data);
                 setUsers(data);
                 setLoading(false);
                 setError(null);
@@ -22,6 +24,7 @@ export default function ApiFetch() {
                 setError(error.message);
                 setLoading(false);
             });
+            //also i can do it from axios
     }, [users, loading, error]);
 
     if (loading) {
@@ -29,6 +32,8 @@ export default function ApiFetch() {
     }
 
     return (
+        <>
+        <Navbar/>
         <div className="max-w-4xl mx-auto p-6">
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">Users List</h2>
             {error == null ? (
@@ -51,5 +56,6 @@ export default function ApiFetch() {
 
             )}
         </div>
+        </>
     );
 }
